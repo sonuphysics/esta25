@@ -20,8 +20,9 @@ This part of the project documentation focuses on **examples** usage of `EStA`.
 
 
 
- 
- - read `xyz` file data. 
+--- 
+## General related
+- Read `xyz` file data. 
 ``` py
 
 #import esta.general.aadhaar as aadh  [this also works]
@@ -30,8 +31,37 @@ This part of the project documentation focuses on **examples** usage of `EStA`.
 from esta import Xat # import Xat class
 Xat.read_xyz(filename='x.xyz')
 ```
+---
 
- - read `poscar` file data.
+
+
+
+- Substitution of atoms by other atom or gp of atoms.
+```py
+import glob
+import esta.general.substitute_atom as substitute
+
+atomid = 10
+xyzfile = 'path_0000.xyz'
+xyz_subs_file = 'methyl.xyz'  # taken from lib_xyz in esta
+
+# atomid = 62
+# xyzfile = 'de_SUB_path_all_all.xyz'
+# xyz_subs_file = 'H.xyz' 
+
+atom_id_subs = 1  #Generally.. C-atom Must be the first atom in the substituent 
+part 
+
+print('list of files: {}'.format(xyzfile))
+
+substitute.substitute_atom_by_atoms(atomid=atomid, atom_id_subs=atom_id_subs,\
+xyzfile=xyzfile, xyz_subs_file=xyz_subs_file)
+```
+
+
+
+- Read `poscar` file data.
+  
 ``` py
 
 import esta.vaspBag.inout.crystal_lattice as clatt
@@ -78,7 +108,48 @@ xlatt.get_natm_type
 
 ```
 
- - read POSCARs for reactants and products in a reaction and generate intermediate structures.
+---
+- Rename_files_using_index_for_ANY (collection of xyz or poscar files).
+``` py
+import glob
+import esta.general.rename_general as rename
+
+#files = glob.glob("SUB_de_SUB*.xyz")
+files = glob.glob("rlx*.xyz")
+
+#--for keeping  part of the file--for example: [0,-2] part is kept ; last part is removed
+first_index=False # if false mean 2nd index is also taken!
+str_indx = [0,-2] #,[4,-2]] #  for first_index = False
+#str_indx = [[0,-2] ,[4,-2]] #  ALSO can be used**
+
+#--for removing begining part of the file--for example: [0,3]; this part is removed; last is kept
+#first_index=True 
+#str_indx = [0,3] #   for first index=True
+
+
+for ifile in files:
+    print('ifile is: {}'.format(ifile))
+    rename.to_file_any(ifile, str_indx, first_indx_only=first_index, file_extension='xyz') #POSCAR' ) 
+```
+---
+
+
+
+---
+## VASP related
+- Create input files for the vasp calculations.
+``` py 
+
+import esta.vaspBag.vaspin as vaspin
+vaspobj = vaspin.vasp()
+vaspobj.get_vasp_input(poscar_name='POSCAR')
+
+```
+---
+
+
+---
+- Read POSCARs for reactants and products in a reaction and generate intermediate structures.
 ``` py
 
 import numpy as np
@@ -99,67 +170,15 @@ print(configurations[1])
 
 get_configs.get_poscar_images(N, poscar_obj, poscar_obj2)
 ```
-
- - substitution of atoms by other atom or gp of atoms.
-```python
-import glob
-import esta.general.substitute_atom as substitute
-
-atomid = 10
-xyzfile = 'path_0000.xyz'
-xyz_subs_file = 'methyl.xyz'  # taken from lib_xyz in esta
-
-# atomid = 62
-# xyzfile = 'de_SUB_path_all_all.xyz'
-# xyz_subs_file = 'H.xyz' 
-
-atom_id_subs = 1  #Generally.. C-atom Must be the first atom in the substituent 
-part 
-
-print('list of files: {}'.format(xyzfile))
-
-substitute.substitute_atom_by_atoms(atomid=atomid, atom_id_subs=atom_id_subs,\
-xyzfile=xyzfile, xyz_subs_file=xyz_subs_file)
-```
+---
 
 
 
 
- - rename_files_using_index_for_ANY (collection of xyz or poscar files).
-
-``` py
-import glob
-import esta.general.rename_general as rename
-
-#files = glob.glob("SUB_de_SUB*.xyz")
-files = glob.glob("rlx*.xyz")
-
-#----for keeping  part of the file-----for example: [0,-2] part is kept ; last part is removed
-first_index=False # if false mean 2nd index is also taken!
-str_indx = [0,-2] #,[4,-2]] #  for first_index = False
-#str_indx = [[0,-2] ,[4,-2]] #  ALSO can be used**
-
-#----for removing begining part of the file-----for example: [0,3]; this part is removed; last is kept
-#first_index=True 
-#str_indx = [0,3] #   for first index=True
-
-
-for ifile in files:
-    print('ifile is: {}'.format(ifile))
-    rename.to_file_any(ifile, str_indx, first_indx_only=first_index, file_extension='xyz') #POSCAR' ) 
-```
 
 
 
- - create input files for the vasp calculations.
 
-``` py 
-
-import esta.vaspBag.vaspin as vaspin
-vaspobj = vaspin.vasp()
-vaspobj.get_vasp_input(poscar_name='POSCAR')
-
-```
 
 
 <!-- - read `csv` file contents.
@@ -183,7 +202,9 @@ with open(csvfile) as csvfile:
 ``` 
 -->
 
-- create qe input file for QE calculations with option 1*
+
+## Quanutm-Espresso related
+- Create qe input file for QE calculations with option 1*
 ``` py
 import glob
 import esta.qeBag.gen_qeinput_advv as gen_qeinput
@@ -197,7 +218,9 @@ for ifile in posfiles:
 ```
 
 
-- generate displacements from atomic positions in the poscar for vibrational calculations.
+
+
+- Generate displacements from atomic positions in the poscar for vibrational calculations.
 
 ``` py
 import numpy as np
@@ -210,3 +233,51 @@ posfile='fix_3_init_bi_POSCAR' #fix_rlx_3_4c_1_1e_POSCARPOSCAR'
 delta_x = 0.02 # ang
 atmdisp.gen_disp(posfile, qe_part_file, delta_x)
 ```
+
+---
+## ORCA related files
+- Create ORCA input files for atomic relaxation from many xyz files: opt calculations
+```py
+
+
+
+import glob
+import esta.orcaBag.input_orca as iorca
+import numpy as np
+
+cal_type = 'OPT' 
+
+nproc='10'
+memory='1000'
+
+#-----functional and basis(may contain additional tags) together-----------
+functional = "BP86"
+basis = " def2-SVP def2/J RIJCOSX "
+
+
+#-----None, True, or exact words-------------------------------------------
+dispersion='D3Zero' #True or None  # always needed!!
+
+#-----None or some solvent-------------------------------------------------
+solvent=None
+
+#-----None or some txt-----------------------------------------------------
+#extra_tags = {'tag1': 'int=ultrafine','tag2':'nosymm'}
+extra_tags = {'tag3':'NoUseSym '}
+
+#---charge and spin multiplicuty=2S+1 ; for unparied e- => spin-multi = 2; 
+#  unpaired=1
+charge  = 2
+multiplicity = 2
+#--------------------------------------------------------------------------
+
+xyz_file_list = glob.glob("*.xyz")
+print('xyz files are:', format(xyz_file_list))
+
+for ii in xyz_file_list:
+    print('--**--**'*10)
+    orca_obj = iorca.GenerateInp(ii, charge, multiplicity, cal_type)
+    orca_obj.write_inp(functional=functional,basis=basis,dispersion=dispersion,\
+            nproc=nproc, memory=memory, solvent=None, extra_tags=extra_tags)
+```
+---
