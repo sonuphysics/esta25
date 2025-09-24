@@ -111,7 +111,8 @@ plugins:
             show_source: false
             show_signature_annotations: true          
   - api-autonav:
-      modules: ['../vaspBag', '../esta-2.9.5/esta']
+      modules: ['../esta-2.9.5/esta']
+      #modules: ['../vaspBag', '../esta-2.9.5/esta']
 
 
 
@@ -199,7 +200,11 @@ not_in_nav: |
 nav:
   - EStA Software: index.md
   - Getting started:
-    - Installation: explanation.md
+         #- Installation
+<span style="color:blue">
+**Installation**
+</span>
+: explanation.md
     # - Extra:
     #   - tutorials/extra.md
       # - "Blogs":
