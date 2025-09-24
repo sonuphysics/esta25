@@ -45,7 +45,7 @@ One class is `Xat` OR `aadhaar` class to handle atomic structure information i.e
     using xyz file format and periodic systems are handled using POSCAR file format. These formats can
     be further suited to other file format,
     Various Bags are present in the EStA folder to handle software specific data such as `vaspBag`, `qeBag`,
-    `siestaBag`, `grrmBag`, `xtbBag`, and so on.
+    `siestaBag`, `OrcaBag`, `grrmBag`, `xtbBag`, and so on.
 
 Thermodynamics can be calculated based on the vibrational calculation implemented in the `qeBag`. Similarly
     transition state analysis is possible using routines in the `transitionState`.

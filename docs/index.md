@@ -6,11 +6,11 @@
 `Electronic Structure Automater` ([EStA](home-page)) aka pytware for analyzing and calculating to some extent the properties 
 of materials and molecules.
 
-1. EStA software package is capable of analyzing, pre-processing, and post-processing data from different software packages such as `vasp`, `quantum-espresso`, `gaussian`, `xTB`, grrm, and so on. 
+1. EStA software package is capable of analyzing, pre-processing, and post-processing data from different software packages such as `vasp`, `quantum-espresso`, `gaussian`, `xTB`,  `Orca`, grrm, and so on. 
 
 3. It can automatically generate input files for vasp, quantum-esspresso, gaussian, grrm, and other 
 codes as well can do some model calculations. It is written in `python3`, `modern Fotran`, and some 
-part in C. In future, it will be able to perform calculations for predicting electronic and transport properties.
+part in `C`. In future, it will be able to perform calculations for predicting electronic and transport properties.
 
 
 ## Table Of Contents
