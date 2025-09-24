@@ -200,11 +200,7 @@ not_in_nav: |
 nav:
   - EStA Software: index.md
   - Getting started:
-         #- Installation
-<span style="color:blue">
-**Installation**
-</span>
-: explanation.md
+    - Installation: explanation.md
     # - Extra:
     #   - tutorials/extra.md
       # - "Blogs":
