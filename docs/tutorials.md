@@ -23,6 +23,9 @@ This part of the project documentation focuses on **examples** usage of `EStA`.
 --- 
 ## General related
 - Read `xyz` file data. 
+
+!!! example
+
 ``` py
 
 #import esta.general.aadhaar as aadh  [this also works]
@@ -31,12 +34,12 @@ This part of the project documentation focuses on **examples** usage of `EStA`.
 from esta import Xat # import Xat class
 Xat.read_xyz(filename='x.xyz')
 ```
----
-
-
 
 
 - Substitution of atoms by other atom or gp of atoms.
+
+!!! example
+
 ```py
 import glob
 import esta.general.substitute_atom as substitute
@@ -61,6 +64,8 @@ xyzfile=xyzfile, xyz_subs_file=xyz_subs_file)
 
 
 - Read `poscar` file data.
+
+!!! example
   
 ``` py
 
@@ -108,9 +113,13 @@ xlatt.get_natm_type
 
 ```
 
----
+
 - Rename_files_using_index_for_ANY (collection of xyz or poscar files).
+
+!!! example
+
 ``` py
+ 
 import glob
 import esta.general.rename_general as rename
 
@@ -131,25 +140,31 @@ for ifile in files:
     print('ifile is: {}'.format(ifile))
     rename.to_file_any(ifile, str_indx, first_indx_only=first_index, file_extension='xyz') #POSCAR' ) 
 ```
----
 
 
 
----
+
 ## VASP related
-- Create input files for the vasp calculations.
-``` py 
+
+- Create input file for the vasp calculations.
+
+!!! example
+
+``` py
 
 import esta.vaspBag.vaspin as vaspin
 vaspobj = vaspin.vasp()
 vaspobj.get_vasp_input(poscar_name='POSCAR')
 
 ```
----
 
 
 ---
+
 - Read POSCARs for reactants and products in a reaction and generate intermediate structures.
+
+!!! example
+
 ``` py
 
 import numpy as np
@@ -170,6 +185,7 @@ print(configurations[1])
 
 get_configs.get_poscar_images(N, poscar_obj, poscar_obj2)
 ```
+
 ---
 
 
@@ -205,7 +221,11 @@ with open(csvfile) as csvfile:
 
 ## Quanutm-Espresso related
 - Create qe input file for QE calculations with option 1*
+
+!!! example
+
 ``` py
+
 import glob
 import esta.qeBag.gen_qeinput_advv as gen_qeinput
 
@@ -222,6 +242,8 @@ for ifile in posfiles:
 
 - Generate displacements from atomic positions in the poscar for vibrational calculations.
 
+!!! example
+
 ``` py
 import numpy as np
 import esta
@@ -234,50 +256,121 @@ delta_x = 0.02 # ang
 atmdisp.gen_disp(posfile, qe_part_file, delta_x)
 ```
 
----
+
 ## ORCA related files
 - Create ORCA input files for atomic relaxation from many xyz files: opt calculations
-```py
+
+!!! example
+
+  ```py
+
+
+  import glob
+  import esta.orcaBag.input_orca as iorca
+  import numpy as np
+
+  cal_type = 'OPT' 
+
+  nproc='10'
+  memory='1000'
+
+  #-----functional and basis(may contain additional tags) together-----------
+  functional = "BP86"
+  basis = " def2-SVP def2/J RIJCOSX "
+
+
+  #-----None, True, or exact words-------------------------------------------
+  dispersion='D3Zero' #True or None  # always needed!!
+
+  #-----None or some solvent-------------------------------------------------
+  solvent=None
+
+  #-----None or some txt-----------------------------------------------------
+  #extra_tags = {'tag1': 'int=ultrafine','tag2':'nosymm'}
+  extra_tags = {'tag3':'NoUseSym '}
+
+  #---charge and spin multiplicuty=2S+1 ; for unparied e- => spin-multi = 2; 
+  #  unpaired=1
+  charge  = 2
+  multiplicity = 2
+  #--------------------------------------------------------------------------
+
+  xyz_file_list = glob.glob("*.xyz")
+  print('xyz files are:', format(xyz_file_list))
+
+  for ii in xyz_file_list:
+      print('--**--**'*10)
+      orca_obj = iorca.GenerateInp(ii, charge, multiplicity, cal_type)
+      orca_obj.write_inp(functional=functional,basis=basis,dispersion=dispersion,\
+              nproc=nproc, memory=memory, solvent=None, extra_tags=extra_tags)
+  ```
 
 
 
-import glob
-import esta.orcaBag.input_orca as iorca
-import numpy as np
-
-cal_type = 'OPT' 
-
-nproc='10'
-memory='1000'
-
-#-----functional and basis(may contain additional tags) together-----------
-functional = "BP86"
-basis = " def2-SVP def2/J RIJCOSX "
 
 
-#-----None, True, or exact words-------------------------------------------
-dispersion='D3Zero' #True or None  # always needed!!
 
-#-----None or some solvent-------------------------------------------------
-solvent=None
+<!-- !!! orca_input
 
-#-----None or some txt-----------------------------------------------------
-#extra_tags = {'tag1': 'int=ultrafine','tag2':'nosymm'}
-extra_tags = {'tag3':'NoUseSym '}
+    ===  "Create ORCA input files for atomic relaxation from many xyz files: opt calculations"
 
-#---charge and spin multiplicuty=2S+1 ; for unparied e- => spin-multi = 2; 
-#  unpaired=1
-charge  = 2
-multiplicity = 2
-#--------------------------------------------------------------------------
+        ```py
 
-xyz_file_list = glob.glob("*.xyz")
-print('xyz files are:', format(xyz_file_list))
+        import glob
+        import esta.orcaBag.input_orca as iorca
+        import numpy as np
 
-for ii in xyz_file_list:
-    print('--**--**'*10)
-    orca_obj = iorca.GenerateInp(ii, charge, multiplicity, cal_type)
-    orca_obj.write_inp(functional=functional,basis=basis,dispersion=dispersion,\
-            nproc=nproc, memory=memory, solvent=None, extra_tags=extra_tags)
-```
----
+        cal_type = 'OPT' 
+
+        nproc='10'
+        memory='1000'
+
+        #-----functional and basis(may contain additional tags) together-----------
+        functional = "BP86"
+        basis = " def2-SVP def2/J RIJCOSX "
+
+
+        #-----None, True, or exact words-------------------------------------------
+        dispersion='D3Zero' #True or None  # always needed!!
+
+        #-----None or some solvent-------------------------------------------------
+        solvent=None
+
+        #-----None or some txt-----------------------------------------------------
+        #extra_tags = {'tag1': 'int=ultrafine','tag2':'nosymm'}
+        extra_tags = {'tag3':'NoUseSym '}
+
+        #---charge and spin multiplicuty=2S+1 ; for unparied e- => spin-multi = 2; 
+        #  unpaired=1
+        charge  = 2
+        multiplicity = 2
+        #--------------------------------------------------------------------------
+
+        xyz_file_list = glob.glob("*.xyz")
+        print('xyz files are:', format(xyz_file_list))
+
+        for ii in xyz_file_list:
+            print('--**--**'*10)
+            orca_obj = iorca.GenerateInp(ii, charge, multiplicity, cal_type)
+            orca_obj.write_inp(functional=functional,basis=basis,dispersion=dispersion,\
+                    nproc=nproc, memory=memory, solvent=None, extra_tags=extra_tags)
+        ``` -->
+
+
+
+
+
+<!-- 
+        ``` markdown
+        * Sed sagittis eleifend rutrum
+        * Donec vitae suscipit est
+        * Nulla tempor lobortis orci
+        ```
+
+    === "Ordered List"
+
+        ``` markdown
+        1. Sed sagittis eleifend rutrum
+        2. Donec vitae suscipit est
+        3. Nulla tempor lobortis orci
+        ``` -->
