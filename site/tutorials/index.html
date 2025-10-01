@@ -11345,18 +11345,23 @@
 <hr />
 <h2 id="general-related">General related<a class="headerlink" href="#general-related" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Read <code>xyz</code> file data. 
+<li>Read <code>xyz</code> file data. </li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">#import esta.general.aadhaar as aadh  [this also works]</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">#aad = aadh.Aadhaar()</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span> <span class="nn">esta</span> <span class="kn">import</span> <span class="n">Xat</span> <span class="c1"># import Xat class</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">Xat</span><span class="o">.</span><span class="n">read_xyz</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;x.xyz&#39;</span><span class="p">)</span>
-</span></code></pre></div></li>
-</ul>
-<hr />
+</span></code></pre></div>
 <ul>
-<li>
-<p>Substitution of atoms by other atom or gp of atoms.
+<li>Substitution of atoms by other atom or gp of atoms.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">glob</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">esta.general.substitute_atom</span> <span class="k">as</span> <span class="nn">substitute</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -11375,12 +11380,13 @@
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">substitute</span><span class="o">.</span><span class="n">substitute_atom_by_atoms</span><span class="p">(</span><span class="n">atomid</span><span class="o">=</span><span class="n">atomid</span><span class="p">,</span> <span class="n">atom_id_subs</span><span class="o">=</span><span class="n">atom_id_subs</span><span class="p">,</span>\
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">xyzfile</span><span class="o">=</span><span class="n">xyzfile</span><span class="p">,</span> <span class="n">xyz_subs_file</span><span class="o">=</span><span class="n">xyz_subs_file</span><span class="p">)</span>
-</span></code></pre></div></p>
-</li>
-<li>
-<p>Read <code>poscar</code> file data.</p>
-</li>
+</span></code></pre></div>
+<ul>
+<li>Read <code>poscar</code> file data.</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">esta.vaspBag.inout.crystal_lattice</span> <span class="k">as</span> <span class="nn">clatt</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">xlatt</span> <span class="o">=</span> <span class="n">clatt</span><span class="o">.</span><span class="n">Crystal_Lattice</span><span class="p">(</span><span class="s2">&quot;POSCAR&quot;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="o">./</span><span class="p">)</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># or xlatt=clatt.CrystalLattice()</span>
@@ -11423,9 +11429,12 @@
 </span><span id="__span-2-40"><a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="c1"># &#39;l_crystal&#39;, &#39;location&#39;, &#39;natm_type&#39;, &#39;natoms&#39;, &#39;read_poscar&#39;, &#39;real_volume&#39;, &#39;reciprocal_lattice&#39;,</span>
 </span><span id="__span-2-41"><a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="c1"># &#39;tau_cartesian&#39;, &#39;tau_cartestain&#39;, &#39;tau_direct&#39;, &#39;to_cartesian&#39;, &#39;to_crystal&#39;</span>
 </span></code></pre></div>
-<hr />
 <ul>
-<li>Rename_files_using_index_for_ANY (collection of xyz or poscar files).
+<li>Rename_files_using_index_for_ANY (collection of xyz or poscar files).</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">glob</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span> <span class="nn">esta.general.rename_general</span> <span class="k">as</span> <span class="nn">rename</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -11445,22 +11454,25 @@
 </span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="k">for</span> <span class="n">ifile</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
 </span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ifile is: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ifile</span><span class="p">))</span>
 </span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="n">rename</span><span class="o">.</span><span class="n">to_file_any</span><span class="p">(</span><span class="n">ifile</span><span class="p">,</span> <span class="n">str_indx</span><span class="p">,</span> <span class="n">first_indx_only</span><span class="o">=</span><span class="n">first_index</span><span class="p">,</span> <span class="n">file_extension</span><span class="o">=</span><span class="s1">&#39;xyz&#39;</span><span class="p">)</span> <span class="c1">#POSCAR&#39; ) </span>
-</span></code></pre></div></li>
-</ul>
-<hr />
-<hr />
+</span></code></pre></div>
 <h2 id="vasp-related">VASP related<a class="headerlink" href="#vasp-related" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Create input files for the vasp calculations.
+<li>Create input file for the vasp calculations.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">esta.vaspBag.vaspin</span> <span class="k">as</span> <span class="nn">vaspin</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">vaspobj</span> <span class="o">=</span> <span class="n">vaspin</span><span class="o">.</span><span class="n">vasp</span><span class="p">()</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">vaspobj</span><span class="o">.</span><span class="n">get_vasp_input</span><span class="p">(</span><span class="n">poscar_name</span><span class="o">=</span><span class="s1">&#39;POSCAR&#39;</span><span class="p">)</span>
-</span></code></pre></div></li>
-</ul>
-<hr />
+</span></code></pre></div>
 <hr />
 <ul>
-<li>Read POSCARs for reactants and products in a reaction and generate intermediate structures.
+<li>Read POSCARs for reactants and products in a reaction and generate intermediate structures.</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">from</span>  <span class="nn">esta.vaspBag.inout.crystal_lattice</span> <span class="kn">import</span> <span class="n">CrystalLattice</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">import</span> <span class="nn">esta.general.get_configs</span> <span class="k">as</span> <span class="nn">get_configs</span>
@@ -11478,8 +11490,7 @@
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">configurations</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>
 </span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="n">get_configs</span><span class="o">.</span><span class="n">get_poscar_images</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">poscar_obj</span><span class="p">,</span> <span class="n">poscar_obj2</span><span class="p">)</span>
-</span></code></pre></div></li>
-</ul>
+</span></code></pre></div>
 <hr />
 <!-- - read `csv` file contents.
 <div class="language-py highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -11502,8 +11513,11 @@
 
 <h2 id="quanutm-espresso-related">Quanutm-Espresso related<a class="headerlink" href="#quanutm-espresso-related" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>Create qe input file for QE calculations with option 1*
+<li>Create qe input file for QE calculations with option 1*</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">import</span> <span class="nn">glob</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">import</span> <span class="nn">esta.qeBag.gen_qeinput_advv</span> <span class="k">as</span> <span class="nn">gen_qeinput</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
@@ -11513,12 +11527,13 @@
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">for</span> <span class="n">ifile</span> <span class="ow">in</span> <span class="n">posfiles</span><span class="p">:</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">gen_qeinput</span><span class="o">.</span><span class="n">get_qe_input</span><span class="p">(</span><span class="n">ifile</span><span class="p">,</span> <span class="n">ps_info</span><span class="p">,</span> <span class="n">lprint_cell</span> <span class="o">=</span><span class="s1">&#39;angstrom&#39;</span><span class="p">,</span>\
 </span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="n">cal_type</span><span class="o">=</span><span class="s1">&#39;vc-relax&#39;</span><span class="p">,</span> <span class="n">lcopy_pseudo</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">l_pseudo_GVRB</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></code></pre></div></p>
-</li>
-<li>
-<p>Generate displacements from atomic positions in the poscar for vibrational calculations.</p>
-</li>
+</span></code></pre></div>
+<ul>
+<li>Generate displacements from atomic positions in the poscar for vibrational calculations.</li>
 </ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">import</span> <span class="nn">esta</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kn">import</span> <span class="nn">esta.phonon.atm_displacements_selective_general_disp</span>  <span class="k">as</span> <span class="nn">atmdisp</span>
@@ -11529,10 +11544,13 @@
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">delta_x</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="c1"># ang</span>
 </span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="n">atmdisp</span><span class="o">.</span><span class="n">gen_disp</span><span class="p">(</span><span class="n">posfile</span><span class="p">,</span> <span class="n">qe_part_file</span><span class="p">,</span> <span class="n">delta_x</span><span class="p">)</span>
 </span></code></pre></div>
-<hr />
 <h2 id="orca-related-files">ORCA related files<a class="headerlink" href="#orca-related-files" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Create ORCA input files for atomic relaxation from many xyz files: opt calculations
+<li>Create ORCA input files for atomic relaxation from many xyz files: opt calculations</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">glob</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">import</span> <span class="nn">esta.orcaBag.input_orca</span> <span class="k">as</span> <span class="nn">iorca</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -11571,9 +11589,66 @@
 </span><span id="__span-9-36"><a id="__codelineno-9-36" name="__codelineno-9-36" href="#__codelineno-9-36"></a>    <span class="n">orca_obj</span> <span class="o">=</span> <span class="n">iorca</span><span class="o">.</span><span class="n">GenerateInp</span><span class="p">(</span><span class="n">ii</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">multiplicity</span><span class="p">,</span> <span class="n">cal_type</span><span class="p">)</span>
 </span><span id="__span-9-37"><a id="__codelineno-9-37" name="__codelineno-9-37" href="#__codelineno-9-37"></a>    <span class="n">orca_obj</span><span class="o">.</span><span class="n">write_inp</span><span class="p">(</span><span class="n">functional</span><span class="o">=</span><span class="n">functional</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="n">basis</span><span class="p">,</span><span class="n">dispersion</span><span class="o">=</span><span class="n">dispersion</span><span class="p">,</span>\
 </span><span id="__span-9-38"><a id="__codelineno-9-38" name="__codelineno-9-38" href="#__codelineno-9-38"></a>            <span class="n">nproc</span><span class="o">=</span><span class="n">nproc</span><span class="p">,</span> <span class="n">memory</span><span class="o">=</span><span class="n">memory</span><span class="p">,</span> <span class="n">solvent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">extra_tags</span><span class="o">=</span><span class="n">extra_tags</span><span class="p">)</span>
-</span></code></pre></div></li>
-</ul>
-<hr />
+</span></code></pre></div>
+<!-- !!! orca_input
+
+    ===  "Create ORCA input files for atomic relaxation from many xyz files: opt calculations"
+
+        ```py
+
+        import glob
+        import esta.orcaBag.input_orca as iorca
+        import numpy as np
+
+        cal_type = 'OPT' 
+
+        nproc='10'
+        memory='1000'
+
+        #-----functional and basis(may contain additional tags) together-----------
+        functional = "BP86"
+        basis = " def2-SVP def2/J RIJCOSX "
+
+
+        #-----None, True, or exact words-------------------------------------------
+        dispersion='D3Zero' #True or None  # always needed!!
+
+        #-----None or some solvent-------------------------------------------------
+        solvent=None
+
+        #-----None or some txt-----------------------------------------------------
+        #extra_tags = {'tag1': 'int=ultrafine','tag2':'nosymm'}
+        extra_tags = {'tag3':'NoUseSym '}
+
+        #---charge and spin multiplicuty=2S+1 ; for unparied e- => spin-multi = 2; 
+        #  unpaired=1
+        charge  = 2
+        multiplicity = 2
+        #--------------------------------------------------------------------------
+
+        xyz_file_list = glob.glob("*.xyz")
+        print('xyz files are:', format(xyz_file_list))
+
+        for ii in xyz_file_list:
+            print('--**--**'*10)
+            orca_obj = iorca.GenerateInp(ii, charge, multiplicity, cal_type)
+            orca_obj.write_inp(functional=functional,basis=basis,dispersion=dispersion,\
+                    nproc=nproc, memory=memory, solvent=None, extra_tags=extra_tags)
+        ``` -->
+
+<!-- 
+        <div class="language-markdown highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">*</span><span class="w"> </span>Sed sagittis eleifend rutrum
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">*</span><span class="w"> </span>Donec vitae suscipit est
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">*</span><span class="w"> </span>Nulla tempor lobortis orci
+</span></code></pre></div>
+
+    === "Ordered List"
+
+        ``` markdown
+        1. Sed sagittis eleifend rutrum
+        2. Donec vitae suscipit est
+        3. Nulla tempor lobortis orci
+        ``` -->
 
 
 
