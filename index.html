@@ -11304,35 +11304,39 @@ codes as well can do some model calculations. It is written in <code>python3</co
 part in <code>C</code>. In future, it will be able to perform calculations for predicting electronic and transport properties.</p>
 </li>
 </ol>
-<p><strong>Features</strong>
--    automatic input generations for different electronic structure softwares
--    output analysis of different file formats such xml, yaml, json, and so on
--    vibrational and thermodynamical analysis of atomic and molecular systems
--    transition state finding using CI-NEB approach (interfaced with quantum-espresso for the time being!!)
--    zone centre phonon calculations based on gradient input as implemented in phonon directory (to be expanded to whole zone)
--    model calculations of lattice thermal conductivity (first principles calculation is experimental)
--    tight binding calculation of bulk materials
--    point group detection (space group detection and other stuff carried out using spglib)
--    lattice transformation analysis <br />
--    machine learning prediction of <em>important</em> physical property (more to add soon!!)
--    easy to use unit conversion  routine; axsf, bxsf, cube files .. for visualizations etc
--    reading force constants from phonopy calculations at gamma or any other q-point and finding the force-constants ( :math:<code>\phi_{i,j})</code> between all pair of atoms or specific atom pairs along with respective distances; further exploration of stretching and bending force constants (:math:<code>\phi_{stretch}</code> and :math:<code>\phi_{bend}</code>)
--    Infra-red and Raman-intensity calculations for periodic systems (automatically generates the needed files to compute the :math:<code>\epsilon_{\infty}</code>)
--    Manipulation of atomic and crystal structures such as atomic substitution, deletion, extension, modulation, and inversion, etc.
--    more routines (interfacing of xTB with grrm, minimization procedures, fortran code for calculating static dielectric constant, mode oscillator strength etc..)  are there, but to be added to esta package!!!</p>
+<blockquote>
+<p><strong>FEATURES</strong></p>
+</blockquote>
+<ul>
+<li>Automatic <code>input generations</code> for different electronic structure softwares</li>
+<li>Output analysis of <code>different file formats</code> such xml, yaml, json, and so on</li>
+<li><code>Vibrational and thermodynamical analysis</code> of atomic and molecular systems</li>
+<li><code>Transition state</code> finding using CI-NEB approach (interfaced with quantum-espresso for the time being!!)</li>
+<li><code>Zone centre phonon</code> calculations based on gradient input as implemented in phonon directory (to be expanded to whole zone)</li>
+<li>Model calculations of <code>lattice thermal conductivity</code> (first principles calculation is experimental)</li>
+<li>Tight binding calculation of bulk materials</li>
+<li><code>Point group</code> detection (space group detection and other stuff carried out using spglib)</li>
+<li><code>Lattice transformation</code> analysis   </li>
+<li><code>Machine learning</code> prediction of <em>important</em> physical property (more to add soon!!)</li>
+<li>Easy to use <code>unit conversion</code>  routine; axsf, bxsf, cube files .. for visualizations etc</li>
+<li>Reading <code>force constants</code> from phonopy calculations at gamma or any other q-point and finding the force-constants (:math:<code>\phi_{i,j}</code>) between all pair of atoms or specific atom pairs along with respective distances; further exploration of stretching and bending force constants (:math:<code>\phi_{stretch}</code> and :math:<code>\phi_{bend}</code>)</li>
+<li><code>Infra-red and Raman-intensity</code> calculations for periodic systems (automatically generates the needed files to compute the :math:<code>\epsilon_{\infty}</code>)</li>
+<li><code>Manipulation</code> of atomic and crystal structures such as atomic substitution, deletion, extension, modulation, and inversion, etc.</li>
+<li>More routines (interfacing of xTB with grrm, minimization procedures, fortran code for calculating static dielectric constant, mode oscillator strength etc..)  are there, but to be added to esta package!</li>
+</ul>
 <div class="grid cards">
 <ul>
 <li>
 <p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 4a8 8 0 0 1 8 8 8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8m0 2a6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6 6 6 0 0 0-6-6m-1 2h1.5v3.78l2.33 2.33-1.06 1.06L14 12.4zM2 18a1 1 0 0 1-1-1 1 1 0 0 1 1-1h3.83c.31.71.71 1.38 1.17 2zm1-5a1 1 0 0 1-1-1 1 1 0 0 1 1-1h2.05L5 12l.05 1zm1-5a1 1 0 0 1-1-1 1 1 0 0 1 1-1h3c-.46.62-.86 1.29-1.17 2z"/></svg></span> <strong>Set up EStA</strong></p>
 <hr />
 <p>Install <a href="#"><code>EStA</code></a> with and get up and running in minutes</p>
-<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Getting started</a></p>
+<p><a href="explanation/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Getting started</a></p>
 </li>
 <li>
 <p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12c0-2.03-.67-3.91-2-5.62v11.25c1.33-1.66 2-3.54 2-5.63m-3.37 7H6.38c.68.55 1.57 1 2.67 1.41 1.09.39 2.08.59 2.95.59.88 0 1.86-.2 2.95-.59 1.1-.41 1.99-.86 2.68-1.41M11 17 7 9v8zm6-8-4 8h4zm-5 5.53L15.75 7h-7.5zM17.63 5C15.97 3.67 14.09 3 12 3s-3.97.67-5.62 2zM5 17.63V6.38C3.67 8.09 3 9.97 3 12c0 2.09.67 3.97 2 5.63M23 12c0 3.03-1.06 5.63-3.22 7.78C17.63 21.94 15.03 23 12 23s-5.62-1.06-7.78-3.22C2.06 17.63 1 15.03 1 12s1.06-5.62 3.22-7.78S8.97 1 12 1s5.63 1.06 7.78 3.22C21.94 6.38 23 8.97 23 12"/></svg></span> <strong>Xlat and Xat Classes</strong></p>
 <hr />
 <p>Xlat and Xat to handle the crystal lattice and atom/molecules</p>
-<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Customization</a></p>
+<p><a href="tutorials/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Usage</a></p>
 </li>
 </ul>
 <!-- -  :material-material-design:{ .lg .middle} __HSONU__
@@ -11347,13 +11351,14 @@ part in <code>C</code>. In future, it will be able to perform calculations for p
 <p><img alt="✍" class="twemoji lg middle" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/270d.svg" title=":writing_hand:" /> <strong>Measure Module: Units handling</strong></p>
 <hr />
 <p>Easy units conversions. Atomic units to SI conversion and vice-versa</p>
-<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Reference</a></p>
+<p><a href="tutorials/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> To-add</a></p>
 </li>
 <li>
 <p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c-1.27 0-2.4.8-2.82 2H3v2h1.95L2 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3L6.05 7h3.12c.33.85.98 1.5 1.83 1.83V20H2v2h20v-2h-9V8.82c.85-.32 1.5-.97 1.82-1.82h3.13L15 14c-.47 2 1 3 3.5 3s4.06-1 3.5-3l-2.95-7H21V5h-6.17C14.4 3.8 13.27 3 12 3m0 2a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-6.5 5.25L7 14H4zm13 0L20 14h-3z"/></svg></span> <strong>General and QE handing module</strong></p>
 <hr />
 <p>Lattice and atoms tweaking by <code>General Module</code> class  + generation of <code>QE</code> inputs</p>
-<p><a href="#"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> License</a></p>
+<p><!-- [:octicons-arrow-right-24: License](#) -->
+<a href="tutorials/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"/></svg></span> Usage</a></p>
 </li>
 </ul>
 </div>
