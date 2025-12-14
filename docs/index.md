@@ -14,6 +14,25 @@ part in `C`. In future, it will be able to perform calculations for predicting e
 
 
 
+**Features**
+-    automatic input generations for different electronic structure softwares
+-    output analysis of different file formats such xml, yaml, json, and so on
+-    vibrational and thermodynamical analysis of atomic and molecular systems
+-    transition state finding using CI-NEB approach (interfaced with quantum-espresso for the time being!!)
+-    zone centre phonon calculations based on gradient input as implemented in phonon directory (to be expanded to whole zone)
+-    model calculations of lattice thermal conductivity (first principles calculation is experimental)
+-    tight binding calculation of bulk materials
+-    point group detection (space group detection and other stuff carried out using spglib)
+-    lattice transformation analysis   
+-    machine learning prediction of *important* physical property (more to add soon!!)
+-    easy to use unit conversion  routine; axsf, bxsf, cube files .. for visualizations etc
+-    reading force constants from phonopy calculations at gamma or any other q-point and finding the force-constants ( :math:`\phi_{i,j})` between all pair of atoms or specific atom pairs along with respective distances; further exploration of stretching and bending force constants (:math:`\phi_{stretch}` and :math:`\phi_{bend}`)
+-    Infra-red and Raman-intensity calculations for periodic systems (automatically generates the needed files to compute the :math:`\epsilon_{\infty}`)
+-    Manipulation of atomic and crystal structures such as atomic substitution, deletion, extension, modulation, and inversion, etc.
+-    more routines (interfacing of xTB with grrm, minimization procedures, fortran code for calculating static dielectric constant, mode oscillator strength etc..)  are there, but to be added to esta package!!!
+    
+
+
 <div class="grid cards" markdown>
 
 -   :material-clock-fast:{ .lg .middle } __Set up EStA__
