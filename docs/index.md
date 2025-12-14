@@ -14,24 +14,24 @@ part in `C`. In future, it will be able to perform calculations for predicting e
 
 
 
-**Features**
--    automatic input generations for different electronic structure softwares
--    output analysis of different file formats such xml, yaml, json, and so on
--    vibrational and thermodynamical analysis of atomic and molecular systems
--    transition state finding using CI-NEB approach (interfaced with quantum-espresso for the time being!!)
--    zone centre phonon calculations based on gradient input as implemented in phonon directory (to be expanded to whole zone)
--    model calculations of lattice thermal conductivity (first principles calculation is experimental)
--    tight binding calculation of bulk materials
--    point group detection (space group detection and other stuff carried out using spglib)
--    lattice transformation analysis   
--    machine learning prediction of *important* physical property (more to add soon!!)
--    easy to use unit conversion  routine; axsf, bxsf, cube files .. for visualizations etc
--    reading force constants from phonopy calculations at gamma or any other q-point and finding the force-constants ( :math:`\phi_{i,j})` between all pair of atoms or specific atom pairs along with respective distances; further exploration of stretching and bending force constants (:math:`\phi_{stretch}` and :math:`\phi_{bend}`)
--    Infra-red and Raman-intensity calculations for periodic systems (automatically generates the needed files to compute the :math:`\epsilon_{\infty}`)
--    Manipulation of atomic and crystal structures such as atomic substitution, deletion, extension, modulation, and inversion, etc.
--    more routines (interfacing of xTB with grrm, minimization procedures, fortran code for calculating static dielectric constant, mode oscillator strength etc..)  are there, but to be added to esta package!!!
-    
+>**FEATURES**
 
+- Automatic `input generations` for different electronic structure softwares
+-    Output analysis of `different file formats` such xml, yaml, json, and so on
+-    `Vibrational and thermodynamical analysis` of atomic and molecular systems
+-    `Transition state` finding using CI-NEB approach (interfaced with quantum-espresso for the time being!!)
+-    `Zone centre phonon` calculations based on gradient input as implemented in phonon directory (to be expanded to whole zone)
+-    Model calculations of `lattice thermal conductivity` (first principles calculation is experimental)
+-    Tight binding calculation of bulk materials
+-    `Point group` detection (space group detection and other stuff carried out using spglib)
+-    `Lattice transformation` analysis   
+-    `Machine learning` prediction of *important* physical property (more to add soon!!)
+-    Easy to use `unit conversion`  routine; axsf, bxsf, cube files .. for visualizations etc
+-    Reading `force constants` from phonopy calculations at gamma or any other q-point and finding the force-constants (:math:`\phi_{i,j}`) between all pair of atoms or specific atom pairs along with respective distances; further exploration of stretching and bending force constants (:math:`\phi_{stretch}` and :math:`\phi_{bend}`)
+-    `Infra-red and Raman-intensity` calculations for periodic systems (automatically generates the needed files to compute the :math:`\epsilon_{\infty}`)
+-    `Manipulation` of atomic and crystal structures such as atomic substitution, deletion, extension, modulation, and inversion, etc.
+-    More routines (interfacing of xTB with grrm, minimization procedures, fortran code for calculating static dielectric constant, mode oscillator strength etc..)  are there, but to be added to esta package!
+    
 
 <div class="grid cards" markdown>
 
@@ -41,7 +41,7 @@ part in `C`. In future, it will be able to perform calculations for predicting e
 
     Install [`EStA`](#) with and get up and running in minutes
 
-    [:octicons-arrow-right-24: Getting started](#)
+    [:octicons-arrow-right-24: Getting started](explanation.md)
 
 
 -   :material-material-design:{ .lg .middle } __Xlat and Xat Classes__
@@ -50,7 +50,7 @@ part in `C`. In future, it will be able to perform calculations for predicting e
 
     Xlat and Xat to handle the crystal lattice and atom/molecules
 
-    [:octicons-arrow-right-24: Customization](#)
+    [:octicons-arrow-right-24: Usage](tutorials.md)
 
 
 
@@ -69,7 +69,7 @@ part in `C`. In future, it will be able to perform calculations for predicting e
 
     Easy units conversions. Atomic units to SI conversion and vice-versa
 
-    [:octicons-arrow-right-24: Reference](#)
+    [:octicons-arrow-right-24: To-add](tutorials.md)
 
 
 
@@ -81,7 +81,8 @@ part in `C`. In future, it will be able to perform calculations for predicting e
 
     Lattice and atoms tweaking by `General Module` class  + generation of `QE` inputs
 
-    [:octicons-arrow-right-24: License](#)
+    <!-- [:octicons-arrow-right-24: License](#) -->
+    [:octicons-arrow-right-24: Usage](tutorials.md)
 
 </div>
 
